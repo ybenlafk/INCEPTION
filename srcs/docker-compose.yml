@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   nginx:
-    build: ./requirements/nginx
+    build: ./requirements/nginx/
     container_name: nginx
     image: nginx
     ports:
@@ -19,7 +19,7 @@ services:
       - wordpress:/var/www/html
 
   wordpress:
-    build: ./requirements/wordpress
+    build: ./requirements/wordpress/
     container_name: wordpress
     image: wordpress
     ports:
@@ -35,7 +35,7 @@ services:
     restart: always
 
   mariadb:
-    build: ./requirements/mariadb
+    build: ./requirements/mariadb/
     container_name: mariadb
     image: mariadb
     ports:
@@ -55,7 +55,7 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: /Users/ybenlafk/Desktop/INCEPTION/srcs/requirements/wordpress
+      device: /Users/ybenlafk/Desktop/tmp/wp
     
   mariadb:
     name: mariadb
@@ -63,7 +63,8 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: /Users/ybenlafk/Desktop/INCEPTION/srcs/requirements/mariadb
+      device: /Users/ybenlafk/Desktop/tmp/db
 
 networks:
   inception:
+    driver: bridge

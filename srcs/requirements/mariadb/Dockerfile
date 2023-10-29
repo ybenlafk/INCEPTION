@@ -7,13 +7,19 @@ RUN apt-get update -y && apt-get install mariadb-server -y
 COPY conf/50-server.cnf /etc/mysql/mariadb.conf.d/50-server.cnf
 
 # Copy the setup script into the container
-COPY tools/setup-mariadb.sh ./setup-mariadb.sh
+COPY tools/setup-mariadb.sh /
 
 # Set the execute permissions for the script
-RUN chmod +x ./setup-mariadb.sh
-
+RUN chmod +x /setup-mariadb.sh
+COPY ./conf/mysql.conf /etc/mysql/conf.d/mysql.cnf
 # Expose the port for MariaDB
 EXPOSE 3306
+# ENV DOMAIN_NAME="ybenlafk.1337.com" \
+#     MYSQL_DATABASE="mydb" \
+#     MYSQL_ROOT_PASSWORD="yahya2002@" \
+#     MYSQL_USER="ybenlafk" \
+#     MYSQL_PASSWORD="yahya2002" \
+#     MYSQL_HOST="localhost"
 
 # Start the MariaDB service
-CMD ["./setup-mariadb.sh"]
+CMD ["/setup-mariadb.sh"]
