@@ -15,8 +15,6 @@ echo "GRANT ALL PRIVILEGES ON $MYSQL_DATABASE.* TO '$MYSQL_USER'@'%';" | mysql -
 # Update the root password and grant privileges
 echo "UPDATE mysql.user SET Password=PASSWORD('$MYSQL_ROOT_PASSWORD') WHERE User='root';" | mysql -u root
 echo "FLUSH PRIVILEGES;" | mysql -u root -p"$MYSQL_ROOT_PASSWORD"
-echo "INSERT INTO mysql.user (Host, User, ssl_cipher, x509_issuer,x509_subject,authentication_string) VALUES ('127.0.0.1', 'root', '', '', '', '');" | mysql -u root
-echo "INSERT INTO mysql.user (Host, User, ssl_cipher, x509_issuer,x509_subject,authentication_string) VALUES ('::1', 'root', '', '', '', '');" | mysql -u root
 
 # Stop the MariaDB service (you might not need to stop the service in a Docker environment)
 service mysql stop
