@@ -7,7 +7,11 @@ RUN apt update && apt upgrade -y && apt-get install -y \
     php-fpm \
     php-mysql
 
-RUN mkdir /run/php
+RUN mkdir /var/www \
+    && mkdir /var/www/html \
+    && chown -R www-data:www-data /var/www/html \
+    && chmod -R 755 /var/www/html \
+    && mkdir -p /run/php
 
 # copy php config file
 COPY ./conf/www.conf /etc/php/7.3/fpm/pool.d/www.conf

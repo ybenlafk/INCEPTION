@@ -18,8 +18,7 @@ EXPOSE 3306
 #     MYSQL_DATABASE="mydb" \
 #     MYSQL_ROOT_PASSWORD="yahya2002@" \
 #     MYSQL_USER="ybenlafk" \
-#     MYSQL_PASSWORD="yahya2002" \
-#     MYSQL_HOST="localhost"
+#     MYSQL_PASSWORD="yahya2002"
 
 # Start the MariaDB service
 CMD ["/setup-mariadb.sh"]
