@@ -2,6 +2,7 @@ FROM  debian:buster
 
 # update & upgrade apt
 RUN apt update && apt upgrade -y && apt-get install -y \
+    curl \
     wget \
     php \
     php-fpm \
