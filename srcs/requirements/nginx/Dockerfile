@@ -2,7 +2,7 @@ FROM   debian:buster
 
 RUN apt update && apt upgrade 
 
-RUN apt install -y nginx vim curl 
+RUN apt install -y nginx
 
 RUN mkdir -p /etc/nginx/ssl 
 
