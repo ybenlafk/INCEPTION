@@ -40,4 +40,5 @@ else
     fi
 fi
 
-exec "$@"
+# Start the server
+/usr/sbin/php-fpm7.3 -F
