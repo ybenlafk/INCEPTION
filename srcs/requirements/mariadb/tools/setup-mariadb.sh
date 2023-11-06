@@ -3,12 +3,6 @@
 # Start the MariaDB service (if not running already)
 service mysql start
 
-# Wait for MariaDB service to start (sleep might not be necessary in some cases)
-# Add a delay if required for service initialization
-sleep 5
-
-# Create the database and user
-echo "UPDATE mysql.user SET Host='%' WHERE User='root';" | mysql -u root
 echo "CREATE DATABASE IF NOT EXISTS $MYSQL_DATABASE;" | mysql -u root
 echo "CREATE USER IF NOT EXISTS '$MYSQL_USER'@'%' IDENTIFIED BY '$MYSQL_PASSWORD';" | mysql -u root
 echo "GRANT ALL PRIVILEGES ON $MYSQL_DATABASE.* TO '$MYSQL_USER'@'%';" | mysql -u root

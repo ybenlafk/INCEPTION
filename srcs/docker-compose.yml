@@ -50,7 +50,7 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: /Users/ybenlafk/Desktop/tmp/wp
+      device: /tmp/wp
     
   mariadb:
     name: mariadb
@@ -58,7 +58,7 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: /Users/ybenlafk/Desktop/tmp/db
+      device: /tmp/db
 
 networks:
   inception:

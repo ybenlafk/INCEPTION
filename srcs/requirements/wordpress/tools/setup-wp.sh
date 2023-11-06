@@ -14,7 +14,8 @@ else
     wp core download --allow-root
 
     echo "WordPress downloaded."
-    
+    # wait for mysql to start
+    sleep 5
     # Import environment variables in the config file
     sed -i "s/username_here/$MYSQL_USER/g" wp-config-sample.php
     sed -i "s/password_here/$MYSQL_PASSWORD/g" wp-config-sample.php
@@ -30,9 +31,9 @@ else
         echo "WordPress already installed. Adding users..."
 
 
-        wp core install --url="localhost" --title=$TITLE --admin_user="$ADMINE_USER" --admin_password="$ADMINE_PWD" --admin_email="$ADMINE_EMAIL" --allow-root
+        wp core install --url="localhost" --title=$W_TITLE --admin_user="$ADMINE_USER" --admin_password="$ADMINE_PWD" --admin_email="$ADMINE_EMAIL" --allow-root
         
-        wp user create "$USER" "$EMAIL" --user_pass="$PWD" --allow-root
+        wp user create "$W_USER" "$W_EMAIL" --user_pass="$W_PWD" --allow-root
         
         echo "Two users have been created (one admin)."
     else
