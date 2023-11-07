@@ -13,9 +13,9 @@
 all: run
 	
 run:
-	@mkdir -p /tmp/wp
-	@mkdir -p /tmp/db
-	@docker-compose -f ./srcs/docker-compose.yml up --build
+	@mkdir -p /home/ybenlafk/data/db
+	@mkdir -p /home/ybenlafk/data/wp
+	@docker compose -f ./srcs/docker-compose.yml up --build
 
 clean:
 	@docker system prune -a
