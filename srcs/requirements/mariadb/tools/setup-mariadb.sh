@@ -14,4 +14,4 @@ echo "FLUSH PRIVILEGES;" | mysql -u root -p"$MYSQL_ROOT_PASSWORD"
 service mysql stop
 
 # Start the MariaDB service in the foreground (let Docker manage the service)
-exec mysqld_safe --user=mysql --console
+mysqld_safe 
