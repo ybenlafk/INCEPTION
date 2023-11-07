@@ -31,7 +31,7 @@ else
         echo "WordPress already installed. Adding users..."
 
 
-        wp core install --url="localhost" --title=$W_TITLE --admin_user="$ADMINE_USER" --admin_password="$ADMINE_PWD" --admin_email="$ADMINE_EMAIL" --allow-root
+        wp core install --url=$DOMAIN_NAME --title=$W_TITLE --admin_user="$ADMINE_USER" --admin_password="$ADMINE_PWD" --admin_email="$ADMINE_EMAIL" --allow-root
         
         wp user create "$W_USER" "$W_EMAIL" --user_pass="$W_PWD" --allow-root
         
