@@ -50,7 +50,7 @@ make clean
 
 ## Accessing the Services
 
-- WordPress: https://localhost
+- WordPress: https://<host_name>
   - Login with the wp user and wp password that you use in the .env file.
 
 ## Customization
