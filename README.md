@@ -15,7 +15,7 @@ Before you begin, ensure that you have the following installed on your system:
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/your-username/inception.git
+   https://github.com/ybenlafk/INCEPTION.git
    ```
 
 2. Navigate to the project directory:
@@ -24,7 +24,7 @@ Before you begin, ensure that you have the following installed on your system:
    cd inception
    ```
 
-3. Create a `.env` file and customize the environment variables:
+3. Create a `.env` file in src directory and customize the environment variables:
 
    ```bash
    cp .env.example .env
@@ -37,29 +37,21 @@ Before you begin, ensure that you have the following installed on your system:
 Use Docker Compose to start the services:
 
 ```bash
-docker-compose up -d
+make
 ```
 
 This command will build the images and start the containers in the background.
 
-To stop the services:
+To stop and clean the services:
 
 ```bash
-docker-compose down
+make clean
 ```
 
 ## Accessing the Services
 
-- Nginx: http://localhost
-- MariaDB:
-  - Host: `localhost`
-  - Port: `3306`
-  - Username: `root`
-  - Password: `your_root_password`
-- WordPress: http://localhost/wordpress
-  - Database Name: `wordpress`
-  - Database User: `wordpress`
-  - Database Password: `your_database_password`
+- WordPress: https://localhost
+  - Login with the wp user and wp password that you use in the .env file.
 
 ## Customization
 
@@ -67,6 +59,3 @@ docker-compose down
 - Modify MariaDB configurations in `mariadb/my.cnf` if necessary.
 - Customize WordPress settings in `wordpress/wp-config.php` if required.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
