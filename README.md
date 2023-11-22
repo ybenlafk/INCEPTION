@@ -40,7 +40,7 @@ Use Docker Compose to start the services:
 make
 ```
 
-This command will build the images and start the containers in the background.
+This command will build the images and start the containers in the foreground.
 
 To stop and clean the services:
 
