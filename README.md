@@ -21,7 +21,7 @@ Before you begin, ensure that you have the following installed on your system:
 2. Navigate to the project directory:
 
    ```bash
-   cd inception
+   cd INCEPTION
    ```
 
 3. Create a `.env` file in src directory and customize the environment variables:
