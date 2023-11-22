@@ -1,6 +1,4 @@
-Certainly! Below is a basic template for a README file for your "Inception" project, providing information on how to set up and use the project using Docker and Docker Compose. Feel free to customize it further based on additional details and considerations specific to your project.
 
-```markdown
 # Inception Project
 
 This project aims to set up a development environment for the Inception project using Docker and Docker Compose. It includes three services: Nginx, MariaDB, and WordPress.
@@ -72,15 +70,3 @@ docker-compose down
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-```
-
-In this template:
-
-- The "Prerequisites" section outlines the required software.
-- The "Getting Started" section guides users through cloning the repository and setting up the environment.
-- The "Running the Services" section provides commands to start and stop the services.
-- The "Accessing the Services" section includes URLs and login details for accessing each service.
-- The "Customization" section mentions how users can customize configurations.
-- The "License" section indicates the project's license.
-
-Feel free to add more sections or details based on the complexity and specific requirements of your project.
